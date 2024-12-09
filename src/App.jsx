@@ -1,13 +1,20 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Teacher from './teacher/teacher'
 import Admin from './admin/admin'
 import Login from './Login'
+
 import Student from './student'
 import StudentDashboard from './student/StudentDashboard'
 import StudentCourse from './student/StudentCourse'
 import StudentAttendance from './student/StudentAttendance'
 import StudentProfileSetting from './student/StudentProfileSetting'
 import StudentProgress from './student/StudentProgress'
+
+import Teacher from './teacher'
+import TeacherDashboard from './teacher/TeacherDashboard'
+import TeacherBatches from './teacher/TeacherBatches'
+import TeacherCourses from './teacher/TeacherCourses'
+import TeacherAssignment from './teacher/TeacherAssigment'
+import TeacherProfileSetting from './teacher/TeacherProfileSetting'
 
 function App() {
   return (
@@ -25,7 +32,15 @@ function App() {
           <Route path="setting" element={<StudentProfileSetting />} />
         </Route>
 
-        <Route path='/teacher' element={<Teacher />} />
+        {/* Teacher Sub-Routes */}
+        <Route path='/teacher' element={<Teacher />} >
+          <Route path="dashboard" index element={<TeacherDashboard />} />
+          <Route path="batch" element={<TeacherBatches />} />
+          <Route path="course" element={<TeacherCourses />} />
+          <Route path="assignment" element={<TeacherAssignment />} />
+          <Route path="setting" element={<TeacherProfileSetting />} />
+        </Route>
+
         <Route path='/admin' element={<Admin />} />
       </Routes>
     </BrowserRouter>
