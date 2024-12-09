@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Admin from './admin/admin'
+
 import Login from './Login'
 
 import Student from './student'
@@ -15,6 +15,14 @@ import TeacherBatches from './teacher/TeacherBatches'
 import TeacherCourses from './teacher/TeacherCourses'
 import TeacherAssignment from './teacher/TeacherAssigment'
 import TeacherProfileSetting from './teacher/TeacherProfileSetting'
+
+import Admin from './admin'
+import AdminDashboard from './admin/AdminDashboard'
+import AdminUserManagement from './admin/AdminUserManagement'
+import AdminCourseManagement from './admin/AdminBatchManagement'
+import AdminBatchManagement from './admin/AdminBatchManagement'
+import Report from './admin/Reports'
+import AdminProfileSetting from './admin/AdminProfileSetting'
 
 function App() {
   return (
@@ -41,7 +49,14 @@ function App() {
           <Route path="setting" element={<TeacherProfileSetting />} />
         </Route>
 
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin' element={<Admin />} >
+          <Route path="dashboard" index element={<AdminDashboard />} />
+          <Route path="user-management" element={<AdminUserManagement />} />
+          <Route path="course-management" element={<AdminCourseManagement />} />
+          <Route path="batch-management" element={<AdminBatchManagement />} />
+          <Route path="report" element={<Report />} />
+          <Route path="setting" element={<AdminProfileSetting />} />
+        </ Route>
       </Routes>
     </BrowserRouter>
   )
