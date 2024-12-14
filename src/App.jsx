@@ -23,6 +23,7 @@ import AdminCourseManagement from './admin/AdminBatchManagement'
 import AdminBatchManagement from './admin/AdminBatchManagement'
 import Report from './admin/Reports'
 import AdminProfileSetting from './admin/AdminProfileSetting'
+import StudentAssignment from './student/StudentAssignment'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         {/* Student Sub-Routes */}
         <Route path="/student" element={<Student />}>
           <Route path="dashboard" index element={<StudentDashboard />} />
+          <Route path="assignment" index element={<StudentAssignment />} />
           <Route path="course" element={<StudentCourse />} />
           <Route path="attendance" element={<StudentAttendance />} />
           <Route path="progress" element={<StudentProgress />} />
@@ -49,6 +51,7 @@ function App() {
           <Route path="setting" element={<TeacherProfileSetting />} />
         </Route>
 
+        {/* Admin Sub-Routes */}
         <Route path='/admin' element={<Admin />} >
           <Route path="dashboard" index element={<AdminDashboard />} />
           <Route path="user-management" element={<AdminUserManagement />} />
