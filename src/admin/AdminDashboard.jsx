@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { CalendarDays, GraduationCap, Users, BookOpen, AlertCircle, UserPlus, FolderPlus, BookPlus } from 'lucide-react'
+import { CalendarDays, GraduationCap, Users, BookOpen, AlertCircle, UserPlus, BookPlus } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -12,8 +12,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import AddUserForm from "./components/AddUserForm"
-// import { Overview } from "./overview"
-// import { RecentActivity } from "./recent-activity"
+import CreateBatchForm from "./components/CreateBatchForm"
+
 
 function AdminDashboard() {
   return (
@@ -38,10 +38,25 @@ function AdminDashboard() {
               <AddUserForm />
             </DialogContent>
           </Dialog>
-          <Button>
-            <FolderPlus className="mr-2 h-4 w-4" />
-            Create Batch
-          </Button>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>
+                <UserPlus className="mr-2 h-4 w-4" />
+                Create Batch
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:w-[90%] md:w-[525px] lg:w-[690px] max-h-[80vh] flex flex-col">
+              <DialogHeader>
+                <DialogTitle>Create Batch</DialogTitle>
+                <DialogDescription>
+                  Create a new Batch in the Learning Management System.
+                </DialogDescription>
+              </DialogHeader>
+              <CreateBatchForm />
+            </DialogContent>
+          </Dialog>
+
           <Button>
             <BookPlus className="mr-2 h-4 w-4" />
             Assign Course
@@ -149,7 +164,7 @@ function AdminDashboard() {
                   <AlertCircle className="h-4 w-4" />
                   <AlertTitle>Reminder</AlertTitle>
                   <AlertDescription>
-                    Batch 'Web Development 101' starts next week.
+                    Batch {"'"}Web Development 101{"'"} starts next week.
                   </AlertDescription>
                 </Alert>
               </CardContent>
@@ -178,8 +193,6 @@ function AdminDashboard() {
           </div>
         </TabsContent>
       </Tabs>
-
-      <AddUserForm />
     </div>
   )
 }
