@@ -3,6 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { CalendarDays, GraduationCap, Users, BookOpen, AlertCircle, UserPlus, FolderPlus, BookPlus } from 'lucide-react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import AddUserForm from "./components/AddUserForm"
 // import { Overview } from "./overview"
 // import { RecentActivity } from "./recent-activity"
 
@@ -12,10 +21,23 @@ function AdminDashboard() {
       <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
         <div className="flex items-center space-x-2">
-          <Button>
-            <UserPlus className="mr-2 h-4 w-4" />
-            Add User
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>
+                <UserPlus className="mr-2 h-4 w-4" />
+                Add User
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px] max-h-[80vh] flex flex-col">
+              <DialogHeader>
+                <DialogTitle>Add User</DialogTitle>
+                <DialogDescription>
+                  Add a new user to the Learning Management System.
+                </DialogDescription>
+              </DialogHeader>
+              <AddUserForm />
+            </DialogContent>
+          </Dialog>
           <Button>
             <FolderPlus className="mr-2 h-4 w-4" />
             Create Batch
@@ -156,6 +178,8 @@ function AdminDashboard() {
           </div>
         </TabsContent>
       </Tabs>
+
+      <AddUserForm />
     </div>
   )
 }
