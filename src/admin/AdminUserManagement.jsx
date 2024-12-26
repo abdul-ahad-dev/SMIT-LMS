@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-// import { TeacherManagement } from "./components/TeacherManagement"
+import { TeacherManagement } from "./components/TeacherManagement"
 // import { StudentManagement } from "./components/StudentManagement"
 import { Button } from "@/components/ui/button"
 import { Download, Upload } from 'lucide-react'
@@ -11,7 +11,7 @@ function AdminUserManagement() {
 
 
   return (
-    <div className="space-y-6 p-10 pb-16">
+    <div className="w-screen flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="space-y-0.5">
         <h2 className="text-2xl font-bold tracking-tight">User Management</h2>
         <p className="text-muted-foreground">
@@ -36,7 +36,7 @@ function AdminUserManagement() {
           </div>
         </div>
         <TabsContent value="teachers" className="space-y-4">
-          {/* <TeacherManagement /> */}
+          <TeacherManagement />
         </TabsContent>
         <TabsContent value="students" className="space-y-4">
           {/* <StudentManagement /> */}
