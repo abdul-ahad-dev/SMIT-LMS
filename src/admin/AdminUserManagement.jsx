@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TeacherManagement } from "./components/TeacherManagement"
-// import { StudentManagement } from "./components/StudentManagement"
+import { StudentManagement } from "./components/StudentManagement"
 import { Button } from "@/components/ui/button"
 import { Download, Upload } from 'lucide-react'
 
@@ -39,7 +39,7 @@ function AdminUserManagement() {
           <TeacherManagement />
         </TabsContent>
         <TabsContent value="students" className="space-y-4">
-          {/* <StudentManagement /> */}
+          <StudentManagement />
         </TabsContent>
       </Tabs>
       {/* <RolePermissions /> */}
