@@ -187,7 +187,7 @@ export default function AddUserForm() {
                                                 <Input placeholder="e.g., Mathematics, Computer Science" {...field} />
                                             </FormControl>
                                             <FormDescription>
-                                                Enter the teacher's area of expertise or subject.
+                                                Enter the {"teacher's"} area of expertise or subject.
                                             </FormDescription>
                                             <FormMessage />
                                         </FormItem>
@@ -205,7 +205,7 @@ export default function AddUserForm() {
                                                 <Input placeholder="e.g., ST2023001" {...field} />
                                             </FormControl>
                                             <FormDescription>
-                                                Enter the student's enrollment number or ID.
+                                                Enter the {"student's"} enrollment number or ID.
                                             </FormDescription>
                                             <FormMessage />
                                         </FormItem>
