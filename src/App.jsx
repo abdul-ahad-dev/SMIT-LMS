@@ -18,12 +18,12 @@ import TeacherProfileSetting from './teacher/TeacherProfileSetting'
 
 import Admin from './admin'
 import AdminDashboard from './admin/AdminDashboard'
-import AdminUserManagement from './admin/AdminUserManagement'
 import AdminCourseManagement from './admin/AdminBatchManagement'
 import AdminBatchManagement from './admin/AdminBatchManagement'
 import Report from './admin/Reports'
 import AdminProfileSetting from './admin/AdminProfileSetting'
 import StudentAssignment from './student/StudentAssignment'
+import AdminUserManagement from './admin/AdminUserManagement'
 
 function App() {
   return (
