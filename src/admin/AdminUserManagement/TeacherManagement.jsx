@@ -18,7 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal, Plus } from 'lucide-react'
-import { AddTeacherDialog } from "./AddTeacherDialog"
+import AddTeacherDialog from "./AddTeacherDialog";
 
 // Mock data for demonstration
 const teachers = [
