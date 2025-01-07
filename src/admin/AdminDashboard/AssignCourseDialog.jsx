@@ -156,3 +156,5 @@ export function AssignCourseDialog() {
     )
 }
 
+
+export default AssignCourseDialog;

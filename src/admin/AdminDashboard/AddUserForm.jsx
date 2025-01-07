@@ -57,7 +57,7 @@ const defaultValues = {
     batch: "",
 }
 
-export default function AddUserForm() {
+function AddUserForm() {
     const [role, setRole] = useState("student")
 
     const form = useForm({
@@ -253,3 +253,5 @@ export default function AddUserForm() {
     )
 }
 
+
+export default AddUserForm;

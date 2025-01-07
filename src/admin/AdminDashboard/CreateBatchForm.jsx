@@ -75,7 +75,7 @@ const studentsData = [
   { id: "student3", name: "Eva Fischer" },
 ]
 
-export default function CreateBatchForm() {
+function CreateBatchForm() {
   const [isUploading, setIsUploading] = useState(false)
 
   const form = useForm({
@@ -413,4 +413,5 @@ export default function CreateBatchForm() {
     </div>
   )
 }
-
+ 
+export default CreateBatchForm;

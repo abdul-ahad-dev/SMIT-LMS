@@ -18,7 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal, Plus } from 'lucide-react'
-// import { AddTeacherDialog } from "./add-teacher-dialog"
+import { AddTeacherDialog } from "./AddTeacherDialog"
 
 // Mock data for demonstration
 const teachers = [
@@ -95,7 +95,7 @@ export function TeacherManagement() {
           ))}
         </TableBody>
       </Table>
-      {/* <AddTeacherDialog open={showAddDialog} onOpenChange={setShowAddDialog} /> */}
+      <AddTeacherDialog open={showAddDialog} onOpenChange={setShowAddDialog} />
     </div>
   )
 };
