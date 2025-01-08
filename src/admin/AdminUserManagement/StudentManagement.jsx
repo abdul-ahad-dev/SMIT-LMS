@@ -19,9 +19,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal, Plus } from 'lucide-react'
 import { AddStudentDialog } from "./AddStudentDialog"
-import { DeleteConfirmationDialog } from "./DeleteConfirmationDialog"
+import DeleteConfirmationDialog from "./DeleteConfirmationDialog"
 import AssignBatchDialog from "./AssignBatchDialog.jsx"
 import EditStudentDialog from "./EditStudentDialog"
+
 
 // Mock data for demonstration
 const students = [

@@ -9,12 +9,17 @@ import {
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 
-export function DeleteConfirmationDialog({
+
+function DeleteConfirmationDialog({
     open,
     onOpenChange,
+    teacherName,
     studentName,
     onConfirm,
 }) {
+    const name = teacherName || studentName
+    const role = teacherName ? "teacher" : "student"
+
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
             <AlertDialogContent>
@@ -22,7 +27,7 @@ export function DeleteConfirmationDialog({
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                     <AlertDialogDescription>
                         This action cannot be undone. This will permanently delete the account
-                        of {studentName} and remove their data from our servers.
+                        of {name} ({role}) and remove their data from our servers.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

@@ -18,7 +18,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal, Plus } from 'lucide-react'
-import AddTeacherDialog from "./AddTeacherDialog";
+import AddTeacherDialog from "./AddTeacherDialog"
+import EditTeacherDialog from "./EditTeacherDialog"
+import AssignBatchCourseDialog from "./AssignBatchCourseDialog"
+import ChangeStatusDialog from "./ChangeStatusDialog"
+import DeleteConfirmationDialog from "./DeleteConfirmationDialog"
 
 // Mock data for demonstration
 const teachers = [
@@ -30,13 +34,39 @@ const teachers = [
 export function TeacherManagement() {
   const [searchTerm, setSearchTerm] = useState("")
   const [showAddDialog, setShowAddDialog] = useState(false)
+  const [showEditDialog, setShowEditDialog] = useState(false)
+  const [showAssignDialog, setShowAssignDialog] = useState(false)
+  const [showStatusDialog, setShowStatusDialog] = useState(false)
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
+  const [selectedTeacher, setSelectedTeacher] = useState(null)
 
   const filteredTeachers = teachers.filter(
     (teacher) =>
       teacher.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       teacher.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      teacher.batch.toLowerCase().includes(searchTerm.toLowerCase())
+      teacher.batch.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      teacher.course.toLowerCase().includes(searchTerm.toLowerCase())
   )
+
+  const handleEdit = (teacher) => {
+    setSelectedTeacher(teacher)
+    setShowEditDialog(true)
+  }
+
+  const handleAssign = (teacher) => {
+    setSelectedTeacher(teacher)
+    setShowAssignDialog(true)
+  }
+
+  const handleChangeStatus = (teacher) => {
+    setSelectedTeacher(teacher)
+    setShowStatusDialog(true)
+  }
+
+  const handleDelete = (teacher) => {
+    setSelectedTeacher(teacher)
+    setShowDeleteDialog(true)
+  }
 
   return (
     <div className="space-y-4">
@@ -84,10 +114,12 @@ export function TeacherManagement() {
                       Copy email
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Edit details</DropdownMenuItem>
-                    <DropdownMenuItem>Assign batch/course</DropdownMenuItem>
-                    <DropdownMenuItem>Change status</DropdownMenuItem>
-                    <DropdownMenuItem className="text-red-600">Delete account</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleEdit(teacher)}>Edit details</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleAssign(teacher)}>Assign batch/course</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleChangeStatus(teacher)}>Change status</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => handleDelete(teacher)} className="text-red-600">
+                      Delete account
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </TableCell>
@@ -96,6 +128,38 @@ export function TeacherManagement() {
         </TableBody>
       </Table>
       <AddTeacherDialog open={showAddDialog} onOpenChange={setShowAddDialog} />
+      {selectedTeacher && (
+        <>
+          <EditTeacherDialog
+            open={showEditDialog}
+            onOpenChange={setShowEditDialog}
+            teacher={selectedTeacher}
+          />
+          <AssignBatchCourseDialog
+            open={showAssignDialog}
+            onOpenChange={setShowAssignDialog}
+            teacher={selectedTeacher}
+          />
+          <ChangeStatusDialog
+            open={showStatusDialog}
+            onOpenChange={setShowStatusDialog}
+            teacher={selectedTeacher}
+          />
+          <DeleteConfirmationDialog
+            open={showDeleteDialog}
+            onOpenChange={setShowDeleteDialog}
+            teacherName={selectedTeacher.name}
+            onConfirm={() => {
+              // Implement delete logic here
+              console.log(`Deleting teacher: ${selectedTeacher.name}`)
+              setShowDeleteDialog(false)
+            }}
+          />
+        </>
+      )}
     </div>
   )
-};
+}
+
+
+export default TeacherManagement;
