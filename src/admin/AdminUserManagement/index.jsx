@@ -12,7 +12,7 @@ function AdminUserManagement() {
 
 
     return (
-        <div className="w-screen flex-1 space-y-4 p-4 md:p-8 pt-6">
+        <div className="w-full flex-1 space-y-4 p-4 md:p-8 pt-6">
             <div className="space-y-0.5">
                 <h2 className="text-2xl font-bold tracking-tight">User Management</h2>
                 <p className="text-muted-foreground">
