@@ -1,5 +1,4 @@
-import { BookOpen, Grid, User, ChartBar, Group, Settings } from "lucide-react"
-
+import { BookOpen, Grid, User, CalendarIcon, ChartBar, Group, Settings } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -10,6 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+
 
 // Menu items.
 const items = [
@@ -32,6 +32,11 @@ const items = [
     title: "Batch Management",
     url: "/admin/batch-management",
     icon: Group,
+  },
+  {
+    title: "Attendance Management",
+    url: "/admin/attendance",
+    icon: CalendarIcon,
   },
   {
     title: "Reports",

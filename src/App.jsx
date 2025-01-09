@@ -20,6 +20,7 @@ import Admin from './admin'
 import AdminDashboard from './admin/AdminDashboard'
 import AdminBatchManagement from './admin/AdminBatchManagement'
 import AdminCourseManagement from './admin/AdminCourseManagement'
+import AdminAttendanceManagement from './admin/AdminAttendanceManagement'
 import Report from './admin/Reports'
 import AdminProfileSetting from './admin/AdminProfileSetting'
 import StudentAssignment from './student/StudentAssignment'
@@ -57,6 +58,10 @@ function App() {
           <Route path="user-management" element={<AdminUserManagement />} />
           <Route path="course-management" element={<AdminCourseManagement />} />
           <Route path="batch-management" element={<AdminBatchManagement />} />
+          <Route path="attendance" element={<AdminAttendanceManagement />} >
+            <Route path="student" element={<AdminBatchManagement />} />
+            <Route path="teacher" element={<AdminBatchManagement />} />
+          </Route>
           <Route path="report" element={<Report />} />
           <Route path="setting" element={<AdminProfileSetting />} />
         </ Route>
@@ -65,4 +70,5 @@ function App() {
   )
 }
 
-export default App
+
+export default App;
