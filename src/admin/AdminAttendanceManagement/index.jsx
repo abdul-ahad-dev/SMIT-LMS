@@ -31,27 +31,30 @@ function AdminAttendanceManagement() {
                     Track and manage attendance for students and teachers.
                 </p>
             </div>
+
             <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-                <div className="flex justify-between items-center">
-                    <TabsList>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                    <TabsList className="flex flex-wrap md:flex-nowrap space-x-4 md:space-x-0 md:flex-1">
                         <TabsTrigger value="individual">Individual</TabsTrigger>
                         <TabsTrigger value="batch">Batch-wise</TabsTrigger>
                         <TabsTrigger value="course">Course-wise</TabsTrigger>
                     </TabsList>
-                    <div className="flex space-x-2">
+                    <div className="flex flex-col md:flex-row gap-2 md:gap-2 items-start md:items-center">
                         <DateRangePicker
                             from={dateRange.from}
                             to={dateRange.to}
                             onSelect={setDateRange}
                         />
-                        <Button variant="outline" size="sm" onClick={handleBulkUpload}>
-                            <Upload className="mr-2 h-4 w-4" />
-                            Bulk Upload
-                        </Button>
-                        <Button variant="outline" size="sm" onClick={handleExport}>
-                            <Download className="mr-2 h-4 w-4" />
-                            Export Data
-                        </Button>
+                        <div className="flex space-x-2">
+                            <Button variant="outline" size="sm" onClick={handleBulkUpload} className="mb-2 sm:mb-0">
+                                <Upload className="mr-2 h-4 w-4" />
+                                Bulk Upload
+                            </Button>
+                            <Button variant="outline" size="sm" onClick={handleExport} className="mb-2 sm:mb-0">
+                                <Download className="mr-2 h-4 w-4" />
+                                Export Data
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <TabsContent value="individual" className="space-y-4">
