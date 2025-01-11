@@ -1,4 +1,5 @@
-import { BookOpen, Grid, User, CalendarIcon, ChartBar, Group, Settings } from "lucide-react"
+import { BookOpen, Grid, Layers, FileText, Settings } from "lucide-react"
+
 import {
   Sidebar,
   SidebarContent,
@@ -10,52 +11,41 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-
 // Menu items.
 const items = [
   {
     title: "Dashboard",
-    url: "/admin/dashboard",
+    url: "/student/dashboard",
     icon: Grid,
   },
   {
-    title: "User Management",
-    url: "/admin/user-management",
-    icon: User,
+    title: "Attendance",
+    url: "/student/attendance",
+    icon: Layers,
   },
   {
-    title: "Course Management",
-    url: "/admin/course-management",
+    title: "Courses",
+    url: "/student/course",
     icon: BookOpen,
   },
   {
-    title: "Batch Management",
-    url: "/admin/batch-management",
-    icon: Group,
-  },
-  {
-    title: "Attendance Management",
-    url: "/admin/attendance",
-    icon: CalendarIcon,
-  },
-  {
-    title: "Reports",
-    url: "/admin/report",
-    icon: ChartBar,
+    title: "Assignments",
+    url: "/student/assignment",
+    icon: FileText,
   },
   {
     title: "Profile Settings",
-    url: "/admin/setting",
+    url: "/student/setting",
     icon: Settings,
   },
 ]
 
-export function AdminSidebar() {
+export function StudentSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Admin Dashboard</SidebarGroupLabel>
+          <SidebarGroupLabel>Teacher Dashboard</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

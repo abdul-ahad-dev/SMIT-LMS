@@ -4,14 +4,14 @@ import { Outlet } from "react-router-dom"
 
 function Admin() {
   return (
-    <SidebarProvider>
+    <SidebarProvider classname="w-screen">
       <AdminSidebar />
-      <main>
-        <SidebarTrigger />
+      <main className="w-full">
+        <SidebarTrigger className="fixed top-2" />
         <Outlet />
       </main>
     </SidebarProvider>
   )
 }
 
-export default Admin
+export default Admin;
