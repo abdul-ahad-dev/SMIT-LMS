@@ -8,11 +8,12 @@ import StudentPerformanceReport from "./StudentPerformanceReport"
 import TeacherPerformanceReport from "./TeacherPerformanceReport"
 import BatchProgressReport from "./BatchProgressReport"
 import StudentReportsTable from "./StudentReportsTable"
+import BatchReportsTable from "./BatchReportsTable"
 import { Download, FileSpreadsheet } from 'lucide-react'
 
-
-export default function Reports() {
+export default function ReportsContent() {
 	const [activeTab, setActiveTab] = useState("overview")
+	const [role, setRole] = useState("")
 	const [batch, setBatch] = useState("")
 	const [course, setCourse] = useState("")
 	const [dateRange, setDateRange] = useState({
@@ -21,7 +22,7 @@ export default function Reports() {
 	})
 
 	const handleGenerateReport = () => {
-		console.log("Generating report with filters:", { activeTab, batch, course, dateRange })
+		console.log("Generating report with filters:", { activeTab, role, batch, course, dateRange })
 		// Here you would typically fetch the report data based on the selected filters
 	}
 
@@ -51,6 +52,17 @@ export default function Reports() {
 				</CardHeader>
 				<CardContent className="space-y-4">
 					<div className="flex flex-wrap gap-4">
+						<Select value={role} onValueChange={setRole}>
+							<SelectTrigger className="w-[180px]">
+								<SelectValue placeholder="Select role" />
+							</SelectTrigger>
+							<SelectContent>
+								<SelectItem value="student">Student</SelectItem>
+								<SelectItem value="teacher">Teacher</SelectItem>
+								<SelectItem value="batch">Batch</SelectItem>
+							</SelectContent>
+						</Select>
+
 						<Select value={batch} onValueChange={setBatch}>
 							<SelectTrigger className="w-[180px]">
 								<SelectValue placeholder="Select batch" />
@@ -119,9 +131,9 @@ export default function Reports() {
 					<TeacherPerformanceReport />
 				</TabsContent>
 				<TabsContent value="batches">
-					<BatchProgressReport />
+					<BatchReportsTable />
 				</TabsContent>
 			</Tabs>
 		</div>
 	)
-}
+};
