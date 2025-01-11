@@ -76,7 +76,7 @@ export default function BatchReportsTable() {
                                             View Detailed Report
                                         </Button>
                                     </DialogTrigger>
-                                    <DialogContent className="max-w-4xl">
+                                    <DialogContent className="max-w-4xl my-6 my-3 h-full overflow-auto">
                                         <DialogHeader>
                                             <DialogTitle>Detailed Report: {batch.name}</DialogTitle>
                                             <DialogDescription>
