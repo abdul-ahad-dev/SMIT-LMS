@@ -2,15 +2,15 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import { DateRangePicker } from "@/components/ui/date-range-picker"
-import { StudentPerformanceReport } from "./student-performance-report"
-import { TeacherPerformanceReport } from "./teacher-performance-report"
-import { BatchProgressReport } from "./batch-progress-report"
+import  DateRangePicker  from "@/components/ui/date-range-picker"
+import StudentPerformanceReport from "./StudentPerformanceReport"
+import TeacherPerformanceReport from "./TeacherPerformanceReport"
+import BatchProgressReport from "./BatchProgressReport"
 import { Download, FileSpreadsheet } from 'lucide-react'
 
 
 export default function Reports() {
-	const [role, setRole] = useState < "student" | "teacher" | "batch" > ("student")
+	const [role, setRole] = useState("student")
 	const [batch, setBatch] = useState("")
 	const [course, setCourse] = useState("")
 	const [dateRange, setDateRange] = useState({
