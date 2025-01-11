@@ -2,15 +2,17 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import  DateRangePicker  from "@/components/ui/date-range-picker"
+import DateRangePicker from "@/components/ui/date-range-picker"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import StudentPerformanceReport from "./StudentPerformanceReport"
 import TeacherPerformanceReport from "./TeacherPerformanceReport"
 import BatchProgressReport from "./BatchProgressReport"
+import StudentReportsTable from "./StudentReportsTable"
 import { Download, FileSpreadsheet } from 'lucide-react'
 
 
 export default function Reports() {
-	const [role, setRole] = useState("student")
+	const [activeTab, setActiveTab] = useState("overview")
 	const [batch, setBatch] = useState("")
 	const [course, setCourse] = useState("")
 	const [dateRange, setDateRange] = useState({
@@ -19,7 +21,7 @@ export default function Reports() {
 	})
 
 	const handleGenerateReport = () => {
-		console.log("Generating report with filters:", { role, batch, course, dateRange })
+		console.log("Generating report with filters:", { activeTab, batch, course, dateRange })
 		// Here you would typically fetch the report data based on the selected filters
 	}
 
@@ -49,17 +51,6 @@ export default function Reports() {
 				</CardHeader>
 				<CardContent className="space-y-4">
 					<div className="flex flex-wrap gap-4">
-						<Select value={role} onValueChange={(value) => setRole(value)}>
-							<SelectTrigger className="w-[180px]">
-								<SelectValue placeholder="Select role" />
-							</SelectTrigger>
-							<SelectContent>
-								<SelectItem value="student">Student</SelectItem>
-								<SelectItem value="teacher">Teacher</SelectItem>
-								<SelectItem value="batch">Batch</SelectItem>
-							</SelectContent>
-						</Select>
-
 						<Select value={batch} onValueChange={setBatch}>
 							<SelectTrigger className="w-[180px]">
 								<SelectValue placeholder="Select batch" />
@@ -107,9 +98,30 @@ export default function Reports() {
 				</CardContent>
 			</Card>
 
-			{role === "student" && <StudentPerformanceReport />}
-			{role === "teacher" && <TeacherPerformanceReport />}
-			{role === "batch" && <BatchProgressReport />}
+			<Tabs value={activeTab} onValueChange={setActiveTab}>
+				<TabsList>
+					<TabsTrigger value="overview">Overview</TabsTrigger>
+					<TabsTrigger value="students">Student Reports</TabsTrigger>
+					<TabsTrigger value="teachers">Teacher Reports</TabsTrigger>
+					<TabsTrigger value="batches">Batch Reports</TabsTrigger>
+				</TabsList>
+				<TabsContent value="overview">
+					<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+						<StudentPerformanceReport />
+						<TeacherPerformanceReport />
+						<BatchProgressReport />
+					</div>
+				</TabsContent>
+				<TabsContent value="students">
+					<StudentReportsTable batch={batch} course={course} />
+				</TabsContent>
+				<TabsContent value="teachers">
+					<TeacherPerformanceReport />
+				</TabsContent>
+				<TabsContent value="batches">
+					<BatchProgressReport />
+				</TabsContent>
+			</Tabs>
 		</div>
 	)
-};
+}
