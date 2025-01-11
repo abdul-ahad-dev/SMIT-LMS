@@ -21,7 +21,6 @@ const mockStudentData = [
 
 
 export default function StudentReportsTable({ batch, course }) {
-
     const [selectedStudent, setSelectedStudent] = useState(null)
 
     const filteredStudents = mockStudentData.filter(student =>
