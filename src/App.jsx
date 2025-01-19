@@ -4,7 +4,7 @@ import Login from './Login'
 
 import Student from './student'
 import StudentDashboard from './student/StudentDashboard'
-import StudentCourse from './student/StudentCourse'
+import StudentCourse from './student/studentcourses/StudentCourse'
 import StudentAttendance from './student/StudentAttendance'
 import StudentProfileSetting from './student/StudentProfileSetting'
 import StudentProgress from './student/StudentProgress'
