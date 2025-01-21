@@ -69,7 +69,7 @@ function StudentDashboard() {
         { week: "Week 5", currentScore: 88, previousScore: 85 },
       ]
     return (
-        <div className="w-full flex-1 space-y-4 p-4 md:p-4 pt-6">
+        <div className="w-full flex-1 space-y-4 p-4 md:p-8 pt-6">
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card className='w-72'>
