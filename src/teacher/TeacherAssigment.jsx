@@ -1,6 +1,9 @@
+import T_AssignmentPage from "./TeacherAssignment"
+
 function TeacherAssigment() {
   return (
-    <div>TeacherAssigment</div>
+    <T_AssignmentPage/>
+    // <div>TeacherAssigment</div>
   )
 }
 

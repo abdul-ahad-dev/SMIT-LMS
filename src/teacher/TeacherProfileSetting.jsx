@@ -1,7 +1,9 @@
+import T_ProfileSetting from "./TeacherProfileSetting";
+
 function TeacherProfileSetting() {
   return (
-    <div>TeacherProfileSetting</div>
+   < T_ProfileSetting/>
   )
 }
 
-export default TeacherProfileSetting
+export default TeacherProfileSetting;

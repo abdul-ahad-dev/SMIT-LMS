@@ -138,7 +138,7 @@ function TeacherDashboard() {
                     <CardContent>
                         <div className="text-2xl font-bold">2</div>
                         <p className="text-xs text-muted-foreground">
-                            +3 from last week
+                            +1 from last week
                         </p>
                     </CardContent>
                 </Card>

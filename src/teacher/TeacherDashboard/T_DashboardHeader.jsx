@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogContent,
@@ -7,9 +7,9 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { UserPlus, BookPlus, FolderPlus } from 'lucide-react'
+// import { UserPlus, BookPlus, FolderPlus } from 'lucide-react'
  import T_AddUserForm from "./T_AddUserForm"
-import T_AnalyticsSection from "./T-AnalyticSection"
+// import T_AnalyticsSection from "./T-AnalyticSection"
 import T_AssignCourseDialog from "./T_AssignCourseDialog"
 import T_CreateBatchForm from "./T_CreateBatchForm"
 
@@ -21,10 +21,10 @@ export default function T_DashboardHeader() {
             <div className="flex items-center space-x-2">
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button>
+                        {/* <Button>
                             <UserPlus className="mr-2 h-4 w-4" />
                             Add User
-                        </Button>
+                        </Button> */}
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px] max-h-[80vh] flex flex-col">
                         <DialogHeader>
@@ -39,10 +39,10 @@ export default function T_DashboardHeader() {
 
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button>
+                        {/* <Button>
                             <FolderPlus className="mr-2 h-4 w-4" />
                             Create Batch
-                        </Button>
+                        </Button> */}
                     </DialogTrigger>
                     <DialogContent className="sm:w-[90%] md:w-[525px] lg:w-[690px] max-h-[80vh] flex flex-col">
                         <DialogHeader>
@@ -57,10 +57,10 @@ export default function T_DashboardHeader() {
 
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button>
+                        {/* <Button>
                             <BookPlus className="mr-2 h-4 w-4" />
                             Assign Course
-                        </Button>
+                        </Button> */}
                     </DialogTrigger>
                     <DialogContent className="sm:w-[90%] md:w-[525px] lg:w-[690px] max-h-[80vh] flex flex-col">
                         <DialogHeader>
