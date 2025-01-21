@@ -65,7 +65,7 @@ function Courselist() {
             <Table className=''>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>Course Name</TableHead>
+                        <TableHead >Course Name</TableHead>
                         <TableHead>Assigned Teacher(s)</TableHead>
                         <TableHead>Batches Linked</TableHead>
                         <TableHead>Status</TableHead>
@@ -79,8 +79,8 @@ function Courselist() {
                 <TableBody className="space-y-2">
                     {filteredCourses.map((course) => (
                         <TableRow key={course.id} className="bg-white rounded-lg shadow-sm">
-                            <TableCell className="font-medium">{course.name}</TableCell>
-                            <TableCell>{course.teachers.join(", ")}</TableCell>
+                            <TableCell className="font-medium p-4">{course.name}</TableCell>
+                            <TableCell className=''>{course.teachers.join(", ")}</TableCell>
                             <TableCell>{course.batches.join(", ")}</TableCell>
                             <TableCell>{course.status}</TableCell>
                             <TableCell>{course.category}</TableCell>

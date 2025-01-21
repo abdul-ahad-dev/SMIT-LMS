@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './Login'
 
 import Student from './student'
-import StudentDashboard from './student/StudentDashboard'
+import StudentDashboard from './student/studentdashboard/StudentDashboard'
 import StudentCourse from './student/studentcourses/StudentCourse'
-import StudentAttendance from './student/StudentAttendance'
+import StudentAttendance from './student/studentattendance/StudentAttendance'
 import StudentProfileSetting from './student/StudentProfileSetting'
 import StudentProgress from './student/StudentProgress'
 
