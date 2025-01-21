@@ -18,11 +18,13 @@ import TeacherProfileSetting from './teacher/TeacherProfileSetting'
 
 import Admin from './admin'
 import AdminDashboard from './admin/AdminDashboard'
-import AdminUserManagement from './admin/AdminUserManagement'
-import AdminCourseManagement from './admin/AdminBatchManagement'
 import AdminBatchManagement from './admin/AdminBatchManagement'
+import AdminCourseManagement from './admin/AdminCourseManagement'
+import AdminAttendanceManagement from './admin/AdminAttendanceManagement'
 import Report from './admin/Reports'
 import AdminProfileSetting from './admin/AdminProfileSetting'
+import StudentAssignment from './student/StudentAssignment'
+import AdminUserManagement from './admin/AdminUserManagement'
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
         {/* Student Sub-Routes */}
         <Route path="/student" element={<Student />}>
           <Route path="dashboard" index element={<StudentDashboard />} />
+          <Route path="assignment" index element={<StudentAssignment />} />
           <Route path="course" element={<StudentCourse />} />
           <Route path="attendance" element={<StudentAttendance />} />
           <Route path="progress" element={<StudentProgress />} />
@@ -49,11 +52,16 @@ function App() {
           <Route path="setting" element={<TeacherProfileSetting />} />
         </Route>
 
+        {/* Admin Sub-Routes */}
         <Route path='/admin' element={<Admin />} >
           <Route path="dashboard" index element={<AdminDashboard />} />
           <Route path="user-management" element={<AdminUserManagement />} />
           <Route path="course-management" element={<AdminCourseManagement />} />
           <Route path="batch-management" element={<AdminBatchManagement />} />
+          <Route path="attendance" element={<AdminAttendanceManagement />} >
+            <Route path="student" element={<AdminBatchManagement />} />
+            <Route path="teacher" element={<AdminBatchManagement />} />
+          </Route>
           <Route path="report" element={<Report />} />
           <Route path="setting" element={<AdminProfileSetting />} />
         </ Route>
@@ -62,4 +70,5 @@ function App() {
   )
 }
 
-export default App
+
+export default App;

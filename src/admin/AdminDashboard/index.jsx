@@ -13,11 +13,11 @@ import {
 } from "@/components/ui/table"
 
 
-import T_AnalyticsSection from "./TeacherDashboard/T-AnalyticSection"
-import T_DashboardHeader from "./TeacherDashboard/T_DashboardHeader"
+import AnalyticsSection from "./AnalyticsSection"
+import DashboardHeader from "./DashboardHeader"
 
 
-function TeacherDashboard() {
+function AdminDashboard() {
 
     const data = [
         {
@@ -95,7 +95,7 @@ function TeacherDashboard() {
 
     return (
         <div className="w-full flex-1 space-y-4 p-4 md:p-8 pt-6">
-            <T_DashboardHeader />
+            <DashboardHeader />
             
 
             {/* Overview Section */}
@@ -117,12 +117,12 @@ function TeacherDashboard() {
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">
-                            Total sections
+                            Total Teachers
                         </CardTitle>
                         <GraduationCap className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">4</div>
+                        <div className="text-2xl font-bold">56</div>
                         <p className="text-xs text-muted-foreground">
                             +2 new this month
                         </p>
@@ -136,9 +136,9 @@ function TeacherDashboard() {
                         <CalendarDays className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">2</div>
+                        <div className="text-2xl font-bold">32</div>
                         <p className="text-xs text-muted-foreground">
-                            +1 from last week
+                            +3 from last week
                         </p>
                     </CardContent>
                 </Card>
@@ -150,7 +150,7 @@ function TeacherDashboard() {
                         <BookOpen className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">8</div>
+                        <div className="text-2xl font-bold">78</div>
                         <p className="text-xs text-muted-foreground">
                             +5 new courses added
                         </p>
@@ -243,7 +243,7 @@ function TeacherDashboard() {
 
 
             {/* Analytics Section */}
-            <T_AnalyticsSection />
+            <AnalyticsSection />
 
 
             {/* Notifications Section */}
@@ -296,4 +296,4 @@ function TeacherDashboard() {
     )
 }
 
-export default TeacherDashboard
+export default AdminDashboard
