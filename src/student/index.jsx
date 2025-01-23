@@ -4,10 +4,10 @@ import { Outlet } from "react-router-dom"
 
 function Student() {
   return (
-    <SidebarProvider>
+    <SidebarProvider  classname="w-screen">
       <StudentSidebar />
-      <main>
-        <SidebarTrigger />
+      <main className="w-full" >
+        <SidebarTrigger className="fixed top-2" />
         <Outlet />
       </main>
     </SidebarProvider>

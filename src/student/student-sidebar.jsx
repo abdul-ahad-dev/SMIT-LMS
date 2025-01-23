@@ -45,7 +45,7 @@ export function StudentSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Teacher Dashboard</SidebarGroupLabel>
+          <SidebarGroupLabel>Student Dashboard</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
